@@ -9,6 +9,7 @@ SDIR = src
 
 OBJS = \
 	terminaldemo.o \
+	term.c \
 
 OBJ = $(patsubst %,$(ODIR)/%,$(OBJS))
 

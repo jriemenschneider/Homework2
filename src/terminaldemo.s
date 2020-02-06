@@ -37,8 +37,9 @@
     section .text
 
     global _start
+    extern main ; DECLARE MAIN
 _start:
-
+    call main ; CALL MAIN
     lea esi,[0xb8000] ; Pointer to terminal buffer in AX
     mov bl, 'A'      ; Character to print in BL
     mov cx,0         ; Character count in CX
