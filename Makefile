@@ -1,4 +1,4 @@
-
+C := gcc
 CONFIGS := -DCONFIG_HEAP_SIZE=4096
 
 CFLAGS := -O0 -ffreestanding -mgeneral-regs-only -mno-mmx -m32 -march=i386 -fno-pie -fno-stack-protector -g3 -Wall $(CONFIGS)
@@ -9,7 +9,7 @@ SDIR = src
 
 OBJS = \
 	terminaldemo.o \
-	term.c \
+	term.o \
 
 OBJ = $(patsubst %,$(ODIR)/%,$(OBJS))
 
