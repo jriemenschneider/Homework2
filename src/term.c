@@ -12,7 +12,7 @@ void putS(char *s){
 	}
 }
 
-main(){
+int main(){
 	char str[] = "HELLO";
 	/*scanf("%s", &str); will use this after I prove I can print to the screen*/
 	putS(str);

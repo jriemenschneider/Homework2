@@ -36,8 +36,8 @@
 ;
     section .text
 
-    global _start
-    extern main ; DECLARE MAIN
+	global _start
+	extern main ; DECLARE MAIN
 _start:
     call main ; CALL MAIN
     lea esi,[0xb8000] ; Pointer to terminal buffer in AX
