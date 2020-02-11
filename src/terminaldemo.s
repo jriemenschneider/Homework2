@@ -40,24 +40,25 @@
 	extern main ; DECLARE MAIN
 _start:
     call main ; CALL MAIN
-    lea esi,[0xb8000] ; Pointer to terminal buffer in AX
-    mov bl, 'A'      ; Character to print in BL
-    mov cx,0         ; Character count in CX
-.loop:
-    inc cx           ; Increment character count
-    cmp cx,500       ; Check if we've written 500 characters yet...
-    jg .done         ; If we have written more than 100 characters, stop
+    ;lea esi,[0xb8000] ; Pointer to terminal buffer in AX
+    ;mov bl, 'A'      ; Character to print in BL
+    ;mov cx,0         ; Character count in CX
+;.loop:
+    ;inc cx           ; Increment character count
+    ;cmp cx,500       ; Check if we've written 500 characters yet...
+    ;jg .done         ; If we have written more than 100 characters, stop
 
-    mov [esi],bl     ; Write character to terminal buffer
-    add esi,2        ; Increment terminal buffer pointer to next character position
-    add bl,1         ; Increment ASCII
-    cmp bl, 'Z'      ; Check if end of alphabet
-    jle .loop        ; If not, keep writing
-    mov bl,'A'       ; If end of alphabet, start back over at A
-    jmp .loop
+    ;mov [esi],bl     ; Write character to terminal buffer
+    ;add esi,2        ; Increment terminal buffer pointer to next character position
+    ;add bl,1         ; Increment ASCII
+    ;cmp bl, 'Z'      ; Check if end of alphabet
+    ;jle .loop        ; If not, keep writing
+    ;mov bl,'A'       ; If end of alphabet, start back over at A
+    ;jmp .loop
 
 .done:
-    jmp .done       ; Loop forever once we've filled the screen
+    ;jmp .done       ; Loop forever once we've filled the screen
+    hlt
 
     section .multiboot
 
