@@ -5,9 +5,7 @@ void puts(char *s){
         while(*s != 0){
 		if(x_pos>=79 || *s == '\n'){
                         x_pos = 0;
-                        terminalBuffer += 160;
-                        //y_pos= y_pos+160;//goes down like Y
-			
+                        terminalBuffer += 160; //wanted to use y_pos, but it didn't work due to continue printing!
                 }
 		else{
 		terminalBuffer[y_pos*80+x_pos] = *s;//terminal buffer is na array and the index you right to is the location you want(which is in []) !!! so it's an array of shorts bc those are each two bytes long!)
